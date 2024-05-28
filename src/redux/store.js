@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import contactsReduser from "./contactsSlice";
+import filtersReduser from "./filtersSlice";
 
 
-const task = createSlice ({
-    contacts: {
-        items: [],
-      },
-      filters: {
-        name: "",
-      },
-})
+export const store = configureStore({
+  reducer: {
+    contacts: contactsReduser,
+    filters: filtersReduser,
+  },
+});
